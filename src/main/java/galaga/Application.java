@@ -29,12 +29,12 @@ public class Application extends PApplet {
     private int prevMillis;
     private InputMode inputContext;
     private final int windowWidth = 600;
-    private final int windowHeight = 900;
+    private final int windowHeight = 800;
     static final File spriteDirectory = new File("src\\main\\resources\\galaga\\sprites");
     static final File highscoreDirectory = new File("scores\\");
-    private final Button gameButton = new Button(new PVector(windowWidth/2, windowHeight-640), new PVector(256.0f, 128.0f), "PLAY");
-    private final Button highscoreButton = new Button(new PVector(windowWidth/2, windowHeight-480), new PVector(340.0f, 128.0f), "HIGHSCORES");
-    private final Button exitButton = new Button(new PVector(windowWidth/2, windowHeight-320), new PVector(256.0f, 128.0f), "EXIT");
+    private final Button gameButton = new Button(new PVector(windowWidth/2, windowHeight-640+(900-windowHeight)), new PVector(256.0f, 128.0f), "PLAY");
+    private final Button highscoreButton = new Button(new PVector(windowWidth/2, windowHeight-480+(900-windowHeight)), new PVector(340.0f, 128.0f), "HIGHSCORES");
+    private final Button exitButton = new Button(new PVector(windowWidth/2, windowHeight-320+(900-windowHeight)), new PVector(256.0f, 128.0f), "EXIT");
     private final Button menuButton = new Button(new PVector(windowWidth/2, windowHeight-100), new PVector(256.0f, 128.0f), "BACK");
     private String inputBox = "";
 
@@ -80,9 +80,9 @@ public class Application extends PApplet {
                 this.inputHandler.setupKey(KeyCode.getKeyCode(key).getCode(), InputMode.MAIN_MENU, KeyEvent.PRESS);
                 this.inputHandler.setupKey(KeyCode.getKeyCode(key).getCode(), InputMode.ENDSCORE_MENU, KeyEvent.PRESS);
                 this.inputHandler.setupKey(KeyCode.getKeyCode(key).getCode(), InputMode.HIGHSCORE_MENU, KeyEvent.PRESS);
-                this.inputHandler.setupKey(KeyCode.getKeyCode(key).getCode(), InputMode.MAIN_MENU, KeyEvent.RELEASE);
-                this.inputHandler.setupKey(KeyCode.getKeyCode(key).getCode(), InputMode.ENDSCORE_MENU, KeyEvent.RELEASE);
-                this.inputHandler.setupKey(KeyCode.getKeyCode(key).getCode(), InputMode.HIGHSCORE_MENU, KeyEvent.RELEASE);
+//                this.inputHandler.setupKey(KeyCode.getKeyCode(key).getCode(), InputMode.MAIN_MENU, KeyEvent.RELEASE);
+//                this.inputHandler.setupKey(KeyCode.getKeyCode(key).getCode(), InputMode.ENDSCORE_MENU, KeyEvent.RELEASE);
+//                this.inputHandler.setupKey(KeyCode.getKeyCode(key).getCode(), InputMode.HIGHSCORE_MENU, KeyEvent.RELEASE);
             }
 
         } catch (Exception e) {
@@ -165,13 +165,14 @@ public class Application extends PApplet {
         this.textAlign(LEFT);
         this.textSize(32.0f);
         this.fill(255, 127);
-        this.text("DEFAULT CONTROLS", 30.0f, windowHeight-144.0f);
-        this.textSize(24.0f);
-        this.text("FIRE", 30.0f, windowHeight-120.0f);  this.text("ENTER or BACKSPACE", 110.0f, windowHeight-120.0f);
-        this.text("UP", 30.0f, windowHeight-96.0f);     this.text("W or UPARROW", 110.0f, windowHeight-96.0f);
-        this.text("LEFT", 30.0f, windowHeight-72.0f);   this.text("D or LEFTARROW", 110.0f, windowHeight-72.0f);
-        this.text("RIGHT", 30.0f, windowHeight-48.0f);  this.text("A or RIGHTARROW", 110.0f, windowHeight-48.0f);
-        this.text("DOWN", 30.0f, windowHeight-24.0f);   this.text("S or DOWNARROW", 110.0f, windowHeight-24.0f);
+        this.text("DEFAULT CONTROLS", 30.0f, windowHeight-144.0f+((900-windowHeight)*0.3f));
+        this.textSize(24.0f-((900-windowHeight)*0.04f));
+        float offset1 = (windowHeight/900.0f); float offset2 = (900-windowHeight)*0.1f;
+        this.text("FIRE", 30.0f, windowHeight-120.0f*offset1+offset2);  this.text("ENTER or BACKSPACE", 110.0f, windowHeight-120.0f*offset1+offset2);
+        this.text("UP", 30.0f, windowHeight-96.0f*offset1+offset2);     this.text("W or UPARROW", 110.0f, windowHeight-96.0f*offset1+offset2);
+        this.text("LEFT", 30.0f, windowHeight-72.0f*offset1+offset2);   this.text("D or LEFTARROW", 110.0f, windowHeight-72.0f*offset1+offset2);
+        this.text("RIGHT", 30.0f, windowHeight-48.0f*offset1+offset2);  this.text("A or RIGHTARROW", 110.0f, windowHeight-48.0f*offset1+offset2);
+        this.text("DOWN", 30.0f, windowHeight-24.0f*offset1+offset2);   this.text("S or DOWNARROW", 110.0f, windowHeight-24.0f*offset1+offset2);
         this.fill(255, 255);
     }
 
@@ -188,12 +189,13 @@ public class Application extends PApplet {
         this.fill(255, 127);
         this.rect(this.windowWidth/2, this.windowHeight/2-88, this.windowWidth-64, this.windowHeight-224, 32);
 
+        float offset = windowHeight/900.0f;
         for(int i = 0; i < Math.min(10, HighscoreHandler.getScores().size()); i++) {
             this.textAlign(CENTER, CENTER);
-            this.text((i+1), 92, 48 + 66*i);
+            this.text((i+1), 92, 48 + (35+32*offset)*offset*i);
             this.textAlign(LEFT, CENTER);
-            this.text(HighscoreHandler.getScores().get(i).first, 132, 48 + 66*i);
-            this.text(HighscoreHandler.getScores().get(i).second, 320, 48 + 66*i);
+            this.text(HighscoreHandler.getScores().get(i).first, 132, 48 + (35+32*offset)*offset*i);
+            this.text(HighscoreHandler.getScores().get(i).second, 320, 48 + (35+32*offset)*offset*i);
         }
 
         // draw buttons
@@ -306,7 +308,7 @@ public class Application extends PApplet {
             }
         }
         // load font
-        PFont font = createFont("C:\\Users\\karol\\Documents\\GitHub\\po-project-2\\Galaga\\src\\main\\resources\\galaga\\font.ttf", 128, false);
+        PFont font = createFont("src\\main\\resources\\galaga\\font.ttf", 128, false);
         this.textFont(font);
         // init
         this.init();
