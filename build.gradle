@@ -24,8 +24,7 @@ tasks.withType(JavaCompile) {
 }
 
 application {
-    mainModule = 'com.example.galaga'
-//    mainClass = 'com.example.galaga.HelloApplication'
+    getMainClass().set('galaga.Main')
 }
 
 java {
@@ -40,6 +39,8 @@ dependencies {
     implementation 'com.googlecode.json-simple:json-simple:1.1.1'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation group: 'org.jogamp.gluegen', name: 'gluegen-rt-main', version:'2.3.2'
+    implementation group: 'org.jogamp.jogl', name: 'jogl-all-main', version:'2.3.2'
 }
 
 test {

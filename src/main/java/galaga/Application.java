@@ -19,7 +19,6 @@ import processing.event.KeyEvent;
 import java.util.regex.Pattern;
 import java.io.File;
 import java.io.FileReader;
-import static galaga.util.EasyPrint.p;
 import static galaga.util.EasyPrint.pcol;
 
 public class Application extends PApplet {
@@ -29,7 +28,7 @@ public class Application extends PApplet {
     private int prevMillis;
     private InputMode inputContext;
     private final int windowWidth = 600;
-    private final int windowHeight = 800;
+    private final int windowHeight = 900;
     static final File spriteDirectory = new File("src\\main\\resources\\galaga\\sprites");
     static final File highscoreDirectory = new File("scores\\");
     private final Button gameButton = new Button(new PVector(windowWidth/2, windowHeight-640+(900-windowHeight)), new PVector(256.0f, 128.0f), "PLAY");
@@ -276,12 +275,15 @@ public class Application extends PApplet {
 
     @Override
     public void settings() {
-        this.size(windowWidth, windowHeight);
+        this.size(windowWidth, windowHeight, processing.core.PConstants.P2D);
     }
 
     @Override
     public void setup() {
+        this.surface.setTitle("Spaaaaace");
+        this.surface.setLocation(0,0);
         this.frameRate(60);
+//        this.getSurface().setLocation(300, 300);
         // load sprites
         SpriteHandler.init();
         for (final File f : spriteDirectory.listFiles()) {
