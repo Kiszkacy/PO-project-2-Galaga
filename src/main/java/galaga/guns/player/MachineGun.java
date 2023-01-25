@@ -12,11 +12,11 @@ public class MachineGun extends ProjectileGun {
         super();
         this.damage = 1.0f;
         this.projectileSpread = 0.0f;
-        this.shotSpread = 40.0f;
+        this.shotSpread = 30.0f;
         this.evenSpreadDistribution = 0.0f;
-        this.shotsPerSecond = 8.0f;
+        this.shotsPerSecond = 10.0f;
         this.barrelCount = 1;
         this.projectile = new MachineProjectile();
-        this.launchSpeed = 620.0f;
+        this.launchSpeed = 650.0f;
     }
 }

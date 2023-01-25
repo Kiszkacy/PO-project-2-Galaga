@@ -1,6 +1,6 @@
 {
     "activeTime":  [0.0, 300.0],
-    "borders": [60, 60],
+    "borders": [100, 100],
     "tickets": 2,
     "wave": [
         {

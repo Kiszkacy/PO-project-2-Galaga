@@ -14,4 +14,5 @@ public final class Global {
     public final static float powerUpShowTime = 3.0f; // 3 seconds
     public final static float powerUpActiveTime = 6.0f; // 6 seconds
     public final static float powerUpSpeed = 100.0f;
+    public final static float healthChangeEffectTime = 3.0f; // 3 seconds
 }
