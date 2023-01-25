@@ -1,0 +1,14 @@
+{
+    "activeTime":  [60.0, 120.0],
+    "borders": [115, 115],
+    "tickets": 1,
+    "wave": [
+        {
+            "type": "SPEEDY",
+            "buffedChance": 0.1,
+            "delay": 0.0,
+            "movement": "LINEAR",
+            "offset": [0, 0]
+        }
+    ]
+}

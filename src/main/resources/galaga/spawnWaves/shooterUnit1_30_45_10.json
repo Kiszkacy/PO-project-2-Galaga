@@ -1,0 +1,14 @@
+{
+    "activeTime":  [30.0, 45.0],
+    "borders": [75, 75],
+    "tickets": 10,
+    "wave": [
+        {
+            "type": "SHOOTER",
+            "buffedChance": 0.0,
+            "delay": 0.0,
+            "movement": "LINEAR",
+            "offset": [0, 0]
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "activeTime":  [60.0, 300.0],
+    "borders": [160, 160],
+    "tickets": 1,
+    "wave": [
+        {
+            "type": "SMALL",
+            "buffedChance": 0.1,
+            "delay": 0.0,
+            "movement": "LINEAR",
+            "offset": [-120, 0]
+        },
+        {
+            "type": "SMALL",
+            "buffedChance": 0.1,
+            "delay": 0.0,
+            "movement": "LINEAR",
+            "offset": [-60, 0]
+        },
+        {
+            "type": "SMALL",
+            "buffedChance": 0.1,
+            "delay": 0.0,
+            "movement": "LINEAR",
+            "offset": [0, 0]
+        },
+        {
+            "type": "SMALL",
+            "buffedChance": 0.1,
+            "delay": 0.0,
+            "movement": "LINEAR",
+            "offset": [60, 0]
+        },
+        {
+            "type": "SMALL",
+            "buffedChance": 0.1,
+            "delay": 0.0,
+            "movement": "LINEAR",
+            "offset": [120, 0]
+        }
+    ]
+}

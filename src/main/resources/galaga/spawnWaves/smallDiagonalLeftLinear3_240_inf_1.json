@@ -1,0 +1,28 @@
+{
+    "activeTime":  [240.0, null],
+    "borders": [40, 160],
+    "tickets": 1,
+    "wave": [
+        {
+            "type": "SMALL",
+            "buffedChance": 0.5,
+            "delay": 0.4,
+            "movement": "LINEAR",
+            "offset": [0, 0]
+        },
+        {
+            "type": "SMALL",
+            "buffedChance": 0.0,
+            "delay": 0.4,
+            "movement": "LINEAR",
+            "offset": [60, 0]
+        },
+        {
+            "type": "SMALL",
+            "buffedChance": 0.0,
+            "delay": 0.0,
+            "movement": "LINEAR",
+            "offset": [120, 0]
+        }
+    ]
+}

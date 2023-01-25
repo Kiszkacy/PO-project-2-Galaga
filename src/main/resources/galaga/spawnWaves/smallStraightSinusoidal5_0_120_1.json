@@ -1,0 +1,42 @@
+{
+    "activeTime":  [0.0, 120.0],
+    "borders": [80, 80],
+    "tickets": 1,
+    "wave": [
+        {
+            "type": "SMALL",
+            "buffedChance": 0.2,
+            "delay": 0.4,
+            "movement": "SINUSOIDAL",
+            "offset": [0, 0]
+        },
+        {
+            "type": "SMALL",
+            "buffedChance": 0.0,
+            "delay": 0.4,
+            "movement": "SINUSOIDAL",
+            "offset": [0, 0]
+        },
+        {
+            "type": "SMALL",
+            "buffedChance": 0.0,
+            "delay": 0.4,
+            "movement": "SINUSOIDAL",
+            "offset": [0, 0]
+        },
+        {
+            "type": "SMALL",
+            "buffedChance": 0.0,
+            "delay": 0.4,
+            "movement": "SINUSOIDAL",
+            "offset": [0, 0]
+        },
+        {
+            "type": "SMALL",
+            "buffedChance": 0.0,
+            "delay": 0.0,
+            "movement": "SINUSOIDAL",
+            "offset": [0, 0]
+        }
+    ]
+}

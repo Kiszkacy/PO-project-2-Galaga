@@ -1,0 +1,28 @@
+{
+    "activeTime":  [120.0, null],
+    "borders": [60, 60],
+    "tickets": 2,
+    "wave": [
+        {
+            "type": "TANKY",
+            "buffedChance": 0.2,
+            "delay": 0.5,
+            "movement": "LINEAR",
+            "offset": [0, 0]
+        },
+        {
+            "type": "TANKY",
+            "buffedChance": 0.0,
+            "delay": 0.5,
+            "movement": "LINEAR",
+            "offset": [0, 0]
+        },
+        {
+            "type": "TANKY",
+            "buffedChance": 0.0,
+            "delay": 0.0,
+            "movement": "LINEAR",
+            "offset": [0, 0]
+        }
+    ]
+}

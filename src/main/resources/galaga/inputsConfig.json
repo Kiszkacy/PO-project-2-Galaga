@@ -1,0 +1,11 @@
+{
+    "version": "1.0",
+    "keymap": {
+        "right": ["D", "Right"],
+        "left": ["A", "Left"],
+        "up": ["W", "Up"],
+        "down": ["S", "Down"],
+        "shoot": ["Enter", "Backspace"],
+        "accept": ["Space"]
+    }
+}
